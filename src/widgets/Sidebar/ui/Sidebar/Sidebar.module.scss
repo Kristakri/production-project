@@ -17,6 +17,10 @@
 	bottom: 20px;
 	display: grid;
 	width: 100%;
-	grid-template-columns: auto;
+	grid-template-columns: repeat(auto-fit, 50px);
 	justify-content: center;
+}
+
+.lang {
+	margin-left: 10px;
 }
