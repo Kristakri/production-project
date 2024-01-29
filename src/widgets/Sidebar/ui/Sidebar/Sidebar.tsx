@@ -17,7 +17,9 @@ export const Sidebar = ({ className }: SidebarProps): JSX.Element => {
 
   return (
     <div
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+        className
+      ])}
     >
       <button onClick={onToggle}>TOGGLE</button>
       <div className={cls.switchers}>

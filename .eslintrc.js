@@ -2,27 +2,27 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
+    jest: true
   },
   extends: [
     'standard-with-typescript',
     'plugin:react/recommended',
-    'plugin:i18next/recommended',
+    'plugin:i18next/recommended'
   ],
   overrides: [
     {
       env: {
-        node: true,
+        node: true
       },
       files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: 'script',
-      },
-    },
+        sourceType: 'script'
+      }
+    }
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['react', 'i18next'],
   rules: {
@@ -32,6 +32,6 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     'react/no-deprecated': 'off',
     '@typescript-eslint/no-floating-promises': 'off', // I don't know about this
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
-  },
+    'i18next/no-literal-string': ['error', { markupOnly: true }]
+  }
 }
