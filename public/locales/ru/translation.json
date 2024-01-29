@@ -2,5 +2,8 @@
   "Language": "Русский",
   "Page not found": "Страница не найдена",
   "About us": "О сайте",
-  "Main page": "Главная страница"
+  "Main page": "Главная страница",
+  "Something went wrong": "Что-то пошло не так",
+  "Reload page": "Перезагрузить страницу",
+  "throw error": "создать ошибку"
 }
