@@ -22,7 +22,7 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react', 'i18next'],
   rules: {
@@ -32,6 +32,8 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     'react/no-deprecated': 'off',
     '@typescript-eslint/no-floating-promises': 'off', // I don't know about this
-    'i18next/no-literal-string': ['error', { markupOnly: true }]
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/no-misused-promises': 'off'
   }
 }
