@@ -7,7 +7,8 @@ module.exports = {
   extends: [
     'standard-with-typescript',
     'plugin:react/recommended',
-    'plugin:i18next/recommended'
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended'
   ],
   overrides: [
     {
@@ -17,6 +18,13 @@ module.exports = {
       files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
         sourceType: 'script'
+      }
+    },
+    {
+      "files": ['*.stories.@(ts|tsx|js|jsx|mjs|cjs)'],
+      "rules": {
+        'storybook/hierarchy-separator': 'error',
+        'storybook/default-exports': 'off',
       }
     }
   ],
@@ -32,8 +40,23 @@ module.exports = {
     '@typescript-eslint/naming-convention': 'off',
     'react/no-deprecated': 'off',
     '@typescript-eslint/no-floating-promises': 'off', // I don't know about this
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-misused-promises': 'off'
-  }
+  },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off'
+      }
+    },
+    {
+      files: ['**/src/**/*.stories.{ts,tsx}'],
+      rules: {
+        '@typescript-eslint/consistent-type-assertions': 'off',
+        'react/display-name': 'off'
+      }
+    }
+  ]
 }
