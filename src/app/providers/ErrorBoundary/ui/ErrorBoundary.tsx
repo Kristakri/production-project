@@ -18,13 +18,10 @@ ErrorBoundaryState
     this.state = { hasError: false }
   }
 
-  static getDerivedStateFromError (error: Error) {
-    // Update state so the next render will show the fallback UI.
-    return { hasError: true }
+  static getDerivedStateFromError () {
   }
 
   componentDidCatch (error: Error, info: ErrorInfo): void {
-    // You can also log the error to an error reporting service
     console.log(error, info)
   }
 
@@ -32,7 +29,6 @@ ErrorBoundaryState
     const { hasError } = this.state
     const { children } = this.props
     if (hasError) {
-      // You can render any custom fallback UI
       return <Suspense fallback=""><PageError /></Suspense>
     }
 
