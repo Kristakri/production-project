@@ -5,7 +5,6 @@ const meta: Meta<typeof Button> = {
   title: 'shared/Button',
   component: Button,
   argTypes: {
-    backgroundColor: { control: 'color' }
   }
 }
 

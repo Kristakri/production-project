@@ -7,7 +7,6 @@ const meta: Meta<typeof Navbar> = {
   title: 'widgets/Navbar',
   component: Navbar,
   argTypes: {
-    backgroundColor: { control: 'color' }
   }
 }
 

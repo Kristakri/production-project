@@ -7,7 +7,6 @@ const meta: Meta<typeof AppLink> = {
   title: 'shared/AppLink',
   component: AppLink,
   argTypes: {
-    backgroundColor: { control: 'color' }
   },
   args: {
     to: '*',

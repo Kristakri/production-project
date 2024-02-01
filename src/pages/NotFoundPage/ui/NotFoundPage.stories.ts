@@ -7,7 +7,6 @@ const meta: Meta<typeof NotFoundPage> = {
   title: 'pages/NotFoundPage',
   component: NotFoundPage,
   argTypes: {
-    backgroundColor: { control: 'color' }
   }
 }
 

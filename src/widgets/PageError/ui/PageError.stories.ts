@@ -7,7 +7,6 @@ const meta: Meta<typeof PageError> = {
   title: 'widgets/PageError',
   component: PageError,
   argTypes: {
-    backgroundColor: { control: 'color' }
   }
 }
 

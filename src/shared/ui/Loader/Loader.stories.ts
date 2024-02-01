@@ -7,7 +7,6 @@ const meta: Meta<typeof Loader> = {
   title: 'shared/Loader',
   component: Loader,
   argTypes: {
-    backgroundColor: { control: 'color' }
   }
 }
 

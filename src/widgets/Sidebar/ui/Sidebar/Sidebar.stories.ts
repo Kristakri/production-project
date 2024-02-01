@@ -7,7 +7,6 @@ const meta: Meta<typeof Sidebar> = {
   title: 'widgets/Sidebar',
   component: Sidebar,
   argTypes: {
-    backgroundColor: { control: 'color' }
   }
 }
 
