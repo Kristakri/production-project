@@ -19,6 +19,7 @@ ErrorBoundaryState
   }
 
   static getDerivedStateFromError () {
+    return { hasError: true }
   }
 
   componentDidCatch (error: Error, info: ErrorInfo): void {
