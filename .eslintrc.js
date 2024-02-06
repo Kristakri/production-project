@@ -32,7 +32,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'i18next'],
+  plugins: ['react', 'i18next', 'react-hooks'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
@@ -42,7 +42,9 @@ module.exports = {
     '@typescript-eslint/no-floating-promises': 'off', // I don't know about this
     'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to', 'data-testid'] }],
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-misused-promises': 'off'
+    '@typescript-eslint/no-misused-promises': 'off',
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
   },
   overrides: [
     {
