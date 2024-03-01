@@ -1,6 +1,6 @@
 import path from 'path'
 import { type BuildPaths } from '../build/types/config'
-import type webpack from 'webpack'
+import webpack from 'webpack'
 import { buildCssLoader } from '../build/loaders/buildCssLoaders'
 import { type RuleSetRule } from 'webpack'
 
@@ -11,8 +11,15 @@ export default ({ config }: { config: webpack.Configuration }) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src')
   }
+
   config.resolve.modules.push(paths.src)
   config.resolve.extensions.push('.ts', '.tsx')
+
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(true)
+    })
+  )
 
   config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
     // eslint-disable-next-line @typescript-eslint/prefer-includes
@@ -27,6 +34,5 @@ export default ({ config }: { config: webpack.Configuration }) => {
     use: ['@svgr/webpack']
   })
   config.module.rules.push(buildCssLoader(true))
-
   return config
 }
