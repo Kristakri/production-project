@@ -3,7 +3,7 @@ import cls from './Navbar.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useCallback, useState } from 'react'
-import { Modal } from 'shared/ui/Modal/Modal'
+import { LoginModel } from 'feature/AuthByUsername'
 
 interface NavbarProps {
   className?: string
@@ -13,8 +13,12 @@ export const Navbar = ({ className }: NavbarProps): JSX.Element => {
   const { t } = useTranslation()
   const [isAuthModal, setIsAuthModal] = useState(false)
 
-  const onToggleModal = useCallback(() => {
-    setIsAuthModal((prev) => !prev)
+  const onCloseModal = useCallback(() => {
+    setIsAuthModal(false)
+  }, [])
+
+  const onShowModal = useCallback(() => {
+    setIsAuthModal(true)
   }, [])
 
   return (
@@ -22,12 +26,10 @@ export const Navbar = ({ className }: NavbarProps): JSX.Element => {
       <Button
         theme={ButtonTheme.CLEAR_INVERTED}
         className={cls.links}
-        onClick={onToggleModal}>
+        onClick={onShowModal}>
         {t('Sing in')}
       </Button>
-      <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-        123
-      </Modal>
+      <LoginModel isOpen={isAuthModal} onClose={onCloseModal} />
     </div>
   )
 }

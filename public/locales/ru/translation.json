@@ -8,5 +8,8 @@
   "throw error": "создать ошибку",
   "toggle": "переключить",
   "Short Lang": "Рус",
-  "Sing in": "Войти"
+  "Sing in": "Войти",
+  "Done": "Готово",
+  "Username": "Имя пользователя",
+  "Password": "Пароль"
 }

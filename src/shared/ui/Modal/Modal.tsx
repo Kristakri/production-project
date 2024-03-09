@@ -3,21 +3,33 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
 import { useState, type ReactNode, useRef, useEffect, useCallback } from 'react'
 import { Portal } from '../Portal/Portal'
-import { useTheme } from 'app/providers/ThemeProvider'
 
 interface ModalProps {
   className?: string
   children: ReactNode
   isOpen?: boolean
   onClose?: () => void
+  lazy?: boolean
 }
 
 export const Modal = (props: ModalProps): JSX.Element => {
-  const { className, children, isOpen, onClose } = props
+  const {
+    className,
+    children,
+    isOpen,
+    onClose,
+    lazy
+  } = props
 
   const [isClosing, setIsClosing] = useState<boolean>(false)
   const timeRef = useRef<ReturnType<typeof setTimeout>>()
-  const { theme } = useTheme()
+  const [isMounted, setIsMounted] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true)
+    }
+  }, [isOpen])
 
   const ANIMATION_DELAY = 300
 
@@ -57,9 +69,13 @@ export const Modal = (props: ModalProps): JSX.Element => {
     [cls.isClosing]: isClosing
   }
 
+  if (lazy && !isMounted) {
+    return null
+  }
+
   return (
     <Portal>
-      <div className={classNames(cls.Modal, mods, [className, cls[theme]])}>
+      <div className={classNames(cls.Modal, mods, [className])}>
         <div className={cls.overlay} onClick={closeHandler}>
           <div className={cls.content} onClick={onContentClick}>
             {children}
