@@ -6,7 +6,6 @@ import { withStyleDecorator } from
   'shared/config/storybook/StyleDecorator/StyleDecorator'
 import { withThemeDecorator } from
   'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { withTranlationDecorator } from 'shared/config/storybook/TranslationDecorator/TranslationDecorator'
 
 const preview: Preview = {
   parameters: {
@@ -20,7 +19,6 @@ const preview: Preview = {
   },
   decorators: [
     withStyleDecorator,
-    withTranlationDecorator,
     withStoreDecorator({
       loginForm: { username: '123', password: '123' }
     }),

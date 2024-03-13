@@ -36,7 +36,7 @@ export const LoginForm = memo((props: LoginFormProps): JSX.Element => {
   return (
     <div className={classNames(cls.LoginForm, {}, [className])}>
       <Text title={t('Authorization')} />
-      {error && <Text text={error} theme={TextTheme.ERROR} />}
+      {error && <Text text={t('Uncorrect username or password')} theme={TextTheme.ERROR} />}
       <Input
         className={cls.input}
         type="text"
