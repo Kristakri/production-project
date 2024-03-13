@@ -39,6 +39,14 @@ export const Outline: Story = {
   }
 }
 
+export const Disabled: Story = {
+  args: {
+    children: 'test',
+    disabled: true,
+    theme: ButtonTheme.OUTLINE
+  }
+}
+
 export const BackgroundTheme: Story = {
   args: {
     children: 'test',

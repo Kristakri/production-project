@@ -23,6 +23,11 @@
   background: none;
 }
 
+.disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
 .background {
   border: none;
   background: var(--bg-color);

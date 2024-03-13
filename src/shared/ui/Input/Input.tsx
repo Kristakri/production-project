@@ -50,7 +50,6 @@ export const Input = memo((props: InputProps): JSX.Element => {
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value)
-    console.log(e.target.value.length)
     setCaretPosition(e.target.value.length)
   }
 
