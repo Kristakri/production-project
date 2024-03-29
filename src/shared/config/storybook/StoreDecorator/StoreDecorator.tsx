@@ -3,14 +3,14 @@ import { type Decorator } from '@storybook/react'
 import { type StateSchema, StoreProvider } from 'app/providers/StoreProvider'
 import { loginReducer } from 'feature/AuthByUsername/model/slice/loginSlice'
 
-const defaultReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   loginForm: loginReducer
 }
 
 export const withStoreDecorator = (
   state: DeepPartial<StateSchema>,
-  asyncReducers: DeepPartial<ReducersMapObject<StateSchema>>
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
 ): Decorator => (Story) =>
-  <StoreProvider initialState={state} asyncReducers={{ ...defaultReducers, asyncReducers }}>
+  <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
     <Story />
   </StoreProvider>

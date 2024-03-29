@@ -13,7 +13,10 @@ interface StoreProviderProps {
 export const StoreProvider = (props: StoreProviderProps): JSX.Element => {
   const { children, initialState, asyncReducers } = props
 
-  const store = createStore(initialState as StateSchema, asyncReducers as ReducersMapObject)
+  const store = createStore(
+    initialState as StateSchema,
+    asyncReducers as ReducersMapObject<StateSchema>
+  )
 
   return (
     <Provider store={store}>
