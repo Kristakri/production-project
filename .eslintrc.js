@@ -45,7 +45,8 @@ module.exports = {
     '@typescript-eslint/no-misused-promises': 'off',
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
-    'react/display-name': 'off'
+    'react/display-name': 'off',
+    '@typescript-eslint/await-thenable': 'off'
   },
   overrides: [
     {

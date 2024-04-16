@@ -1,0 +1,26 @@
+.item {
+  vertical-align: baseline;
+}
+
+.link {
+  margin-top: 10px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+  min-width: 20px;
+  margin-right: 10px;
+}
+
+.linkText {
+  transition: 0.2s opacity;
+}
+
+.collapsed {
+  .linkText {
+    opacity: 0;
+  }
+}

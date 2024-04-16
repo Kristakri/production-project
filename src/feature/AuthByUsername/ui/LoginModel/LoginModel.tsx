@@ -21,7 +21,7 @@ export const LoginModel = (props: LoginModelProps): JSX.Element => {
       lazy
     >
       <Suspense fallback={<Loader />}>
-        <LoginFormAsync />
+        <LoginFormAsync onSuccess={onClose} />
       </Suspense>
     </Modal>
   )

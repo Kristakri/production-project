@@ -11,6 +11,13 @@
     { "id": "1", "username": "admin", "password": "123"}
   ],
   "profile": {
-    "name": "typicode"
+    "first": "Алексей",
+    "lastname": "Гунченко",
+    "age": 21,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Feodosia",
+    "username": "admin",
+    "avatar": "https://sun9-78.userapi.com/impg/CIys-ezqskW6MbxAlMwwadsE9aCm53zH1Y3rww/hOIOQ397OfI.jpg?size=2560x2048&quality=95&sign=acec7835ab31b1ab30d38d8f9c998215&type=album"
   }
 }
